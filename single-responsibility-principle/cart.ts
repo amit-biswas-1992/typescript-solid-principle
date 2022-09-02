@@ -1,7 +1,17 @@
-class CartService{
+class Cart{
 
-    item: item[]
-    totalPrice: double 
+    _items: Item[]
+    totalPrice: double
+
+    constructor(items: Item[])
+
+    addItem(item : Item){
+        this._items.add(item)
+    }
+
+    updateItemQuantity(item: Item, quantity: number) {
+        this._items.find(item).quantity(quantity)
+    }
 
 
     //User or Item shoule not calculate price as calculating price is not there responsibility

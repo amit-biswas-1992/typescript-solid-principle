@@ -1,16 +1,23 @@
-class Cart{
+import Item from "./item"
+  
+
+export class Cart{
 
     _items: Item[]
-    totalPrice: double
+    totalPrice: number = 0
 
-    constructor(items: Item[])
+    constructor(){
+        this._items = []
+    }
+
 
     addItem(item : Item){
-        this._items.add(item)
+        this._items.push(item)
     }
 
     updateItemQuantity(item: Item, quantity: number) {
-        this._items.find(item).quantity(quantity)
+        let foundItem = this._items.find(elem => elem == item)
+        foundItem?.setQuantity(quantity)
     }
 
 
@@ -18,12 +25,12 @@ class Cart{
     calculatePrice(): number{
 
         let total = 0
-        for(const item of this.item){
+        for(const item of this._items){
 
             let price = item.getPrice()
             let quantity = item.getQuantity()
 
-            totla += item.price*item.quantity
+            total += item.getPrice()*item.getQuantity()
         }
         return total
     }

@@ -1,8 +1,10 @@
-class User {
+import { Cart } from "./cart"
+
+export default class User {
 
     private _name: string
     private _age: number
-    private _shoppingCart : Cart
+    private _shoppingCart : Cart | null
 
     constructor(name: string, age: number){
         this._name = name

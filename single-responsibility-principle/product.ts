@@ -1,10 +1,10 @@
-class Product{
+export default class Product{
     private _id : number
     private _name: string
-    private _unitPrice: double
+    private _unitPrice: number
     private _description: string
 
-    constructor(id: number, name: string, unitPrice: double, description: string){
+    constructor(id: number, name: string, unitPrice: number, description: string){
         this._id = id
         this._name = name
         this._unitPrice = unitPrice
@@ -19,7 +19,7 @@ class Product{
         return this._name
     }
 
-    getPrice() : double{
+    getPrice() : number{
         return this._unitPrice
     }
 }
